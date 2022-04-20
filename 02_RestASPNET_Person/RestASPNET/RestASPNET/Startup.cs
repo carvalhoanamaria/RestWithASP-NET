@@ -1,19 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using RestASPNET.Model.Context;
 using RestASPNET.Services;
 using RestASPNET.Services.Implementations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RestASPNET
 {
@@ -35,6 +28,9 @@ namespace RestASPNET
             //Conexao com o banco de dados Mysql
             var connection = Configuration["MySQLConnection:MySQLConnectionString"];
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connection));
+
+            // Infor versonamento // Versioning Api
+            services.AddApiVersioning();
 
             //Dependency Injection
             services.AddScoped<IPersonService, PersonServiceImplementation>();

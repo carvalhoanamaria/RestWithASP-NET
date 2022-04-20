@@ -3,8 +3,6 @@ using RestASPNET.Model.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace RestASPNET.Services.Implementations
 {
@@ -32,9 +30,9 @@ namespace RestASPNET.Services.Implementations
                 _context.Add(person);
                 _context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                throw ex;
+                throw;
             }
             return person;
         }
