@@ -1,9 +1,9 @@
 ﻿using RestASPNET.Model;
 using System.Collections.Generic;
 
-namespace RestASPNET.Services
+namespace RestASPNET.Repository
 {
-    public interface IPersonService
+    public interface IPersonRepository
     {
         Person Create(Person person);
         Person FindByID(long id);
@@ -11,6 +11,8 @@ namespace RestASPNET.Services
         Person Update(Person person);
         void Delete(long id);
 
- 
+        bool Exists(long id);
+
+
     }
 }
