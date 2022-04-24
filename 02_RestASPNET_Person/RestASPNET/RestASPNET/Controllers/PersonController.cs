@@ -50,7 +50,8 @@ namespace RestASPNET.Controllers
         public IActionResult Put([FromBody] Person person)
         {
 
-            if (person == null) return BadRequest();
+            if (person == null) 
+                return BadRequest();
             return Ok(_personBusiness.Update(person));
         }
 

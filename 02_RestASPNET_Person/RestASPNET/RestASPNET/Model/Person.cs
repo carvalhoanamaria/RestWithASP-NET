@@ -1,13 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using RestASPNET.Model.Base;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace RestASPNET.Model
 {
     [Table("person")] // Usado por causa do Linux. Colocando o nome da tabela da mesma forma como esta.
-    public class Person
+    public class Person : BaseEntity
     {
-        [Column("id")]
-        public long Id { get; set; }
 
         [Column("first_name")]
         public string FirsName { get; set; }

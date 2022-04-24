@@ -8,10 +8,10 @@ using RestASPNET.Model.Context;
 using RestASPNET.Business;
 using RestASPNET.Business.Implementations;
 using RestASPNET.Repository;
-using RestASPNET.Repository.Implementations;
 using Serilog;
 using System;
 using System.Collections.Generic;
+using RestASPNET.Repository.Generic;
 
 namespace RestASPNET
 {
@@ -52,10 +52,9 @@ namespace RestASPNET
 
             //Dependency Injection
             services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
-            services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
-
             services.AddScoped<IBooksBusiness, BooksBusinessImplementation>();
-            services.AddScoped<IBooksRepository, BooksRepositoryImplementation>();
+
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }
 
 

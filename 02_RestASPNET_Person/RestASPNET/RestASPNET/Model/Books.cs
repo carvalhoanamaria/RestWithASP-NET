@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using RestASPNET.Model.Base;
 
 namespace RestASPNET.Model
 {
     [Table("books")]
-    public class Books
+    public class Books : BaseEntity
     {
-        [Column("id")]
-        public long Id { get; set; }  
 
         [Column("author")]
         public string Author { get; set; }
